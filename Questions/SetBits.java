@@ -11,8 +11,7 @@ public class SetBits {
     static int numberofBit1(int number) {
         int count1= 0;
         while (number > 0){
-           int bits= number % 2;
-           if(bits == 1){
+           if(number % 2 == 1){
                count1++;
            }
            number /= 2;
