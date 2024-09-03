@@ -4,7 +4,7 @@
 
 public class SetBits {
     public static void main(String[] args) {
-        int number =12;
+        int number =6;
         int ans = numberofBit1(number);
         System.out.println(ans + " '1' present in " + number + " binary");
     }
