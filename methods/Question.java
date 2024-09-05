@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class Question {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number");
         int n = sc.nextInt();
-        System.out.println(isPrime(n));
+        boolean ans = isPrime(n);
+        System.out.println(ans);
     }
 
     static boolean isPrime(int n) {
@@ -12,13 +14,12 @@ public class Question {
             return false;
         }
         int c = 2;
-        while (c <= n) {
+        while (c <= Math.sqrt(n)) {
+            c++;
             if (n % c == 0) {
                 return false;
             }
-            c++;
-
-        }
-
+        }   
+        return true;
     }
 }
