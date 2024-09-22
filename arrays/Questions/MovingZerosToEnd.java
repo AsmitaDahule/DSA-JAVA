@@ -8,16 +8,15 @@ public class MovingZerosToEnd {
     }
 
     static void movingZeros(int[] arr) {
-        int[] temp = {};
-        int j = arr.length-1;
+        int nonZeroIndex = 0;
         for(int i = 0; i < arr.length-1; i++) {
             if(arr[i] != 0){
-                temp[i] = arr[i];
-            }
-            else {
-                temp[j] = arr[i];
-                j--;
+                arr[nonZeroIndex++]= arr[i];
             }
         }
+        while(nonZeroIndex < arr.length){
+            arr[nonZeroIndex++] = 0;
+        }
+
     }
 }
