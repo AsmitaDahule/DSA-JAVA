@@ -1,6 +1,6 @@
 public class CountZero {
     public static void main(String[] args) {
-        int n = 13;
+        int n = 13050040;
         System.out.println(countZero(n));
     }
     static int count = 0;
