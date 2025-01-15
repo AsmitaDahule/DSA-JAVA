@@ -20,6 +20,8 @@ public class LongestSubArray {
     // }
 
 
+    
+
 
 
     // better solution 
@@ -63,13 +65,11 @@ public class LongestSubArray {
         while(right < arr.length){
             sum += arr[right];
 
-            while (sum > k) {
+            if(sum > k) {
                 sum -= arr[left];
                 left++;
             }
-            if(sum <= k){
-                maxlen = Math.max(right-left+1, maxlen);
-            }
+            maxlen = Math.max(right-left+1, maxlen);
             right++;
         }
          System.out.println(maxlen);
