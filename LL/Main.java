@@ -41,6 +41,27 @@ class LL {
     size += 1;
 }
 
+
+public void nthposition(int value, int index){
+    if(index == 0){
+        insertFirst(value);
+    } 
+    if(index == size){
+        insertLast(value);
+    } 
+
+    Node temp = head;
+    for(int i = 1; i < index; i++){
+        temp = temp.next;
+    }
+    Node node = new Node(value);
+
+    node.next = temp.next;
+    temp.next = node;
+
+
+}
+
     public void display(){
         Node temp = head;
         if(head == null) {
@@ -56,21 +77,35 @@ class LL {
         System.out.println(size);
 
     }
+
+    public int deleteFirst(){
+        int val = head.value;
+        head = head.next;
+        if(head == null){
+            tail = null;
+        }
+        size--;
+        return val;
+    }
 }
 
 public class Main{
     public static void main(String[] args) {
         LL list = new LL();
-        list.insertFirst(5);
-        list.insertFirst(45);
-        list.insertFirst(55);
-        list.insertFirst(35);
+        list.insertFirst(1);
+        list.insertFirst(2);
+        list.insertFirst(3);
+        list.insertFirst(4);
 
         list.display();
 
         list.insertLast(9);
 
         list.display();
-       
+
+        list.nthposition(99, 3);
+        list.display();
+        list.deleteFirst();
+        list.display();
     }
 }
